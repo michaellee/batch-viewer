@@ -1,0 +1,20 @@
+<div class="description">
+	<h1>Batch Viewer</h1>
+	<p>Batch Viewer is a simple web page that makes finding an icon in Adam Whitcroft's Batch iconset easier and quicker. See <a href="http://michaellee.co/batch-viewer/">more details</a> about Batch Viewer.</p>
+</div>
+<div class="icons">
+	<% @sortedicons.each do |icon| %>
+		<% if icon != "." && icon != ".." %> 
+			<div class="icon">
+				<img src="/images/bg.png" data-src="/batch-icons-1-3/<%= icon %>" />
+				<div class="icon-title"><%= icon.chomp('.png') %></div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
+<script>
+$(document).ready(function() {
+  $(".icon img").unveil();
+});
+</script>
